@@ -4,3 +4,4 @@
 *.pyc
 Pipfile
 fastText/*
+.idea
