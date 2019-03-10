@@ -3,12 +3,7 @@ import pandas as pd
 with open('kaggle_clean.csv') as f:
     lines = f.readlines()
 
-print(lines[1])
-
 df = pd.read_csv('kaggle_clean.csv', sep=' ',header=None)
-print(df.head())
-
-print(df.shape)
 names = df.ix[:,0]
 df_values = df.drop(df.columns[0], axis=1)
 df_values = df_values.values
