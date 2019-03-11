@@ -55,6 +55,7 @@ var Word2VecUtils = (function() {
   function recommendation(n, wordList) {
     var inputVecs = [];
     for (var ai = 0; ai < wordList.length; ai++) {
+      wordList[ai] = wordList[ai].toLowerCase();
       inputVecs.push(wordVecs[wordList[ai]]);
     }
     var sumVectors = Word2VecUtils.addVecList(inputVecs);
@@ -97,6 +98,7 @@ var Word2VecUtils = (function() {
   }
 
   function findSimilarWords(n, word) {
+    word = word.toLowerCase();
     if (!wordVecs.hasOwnProperty(word)) {
       return [false, word];
     }
