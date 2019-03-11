@@ -58,6 +58,9 @@ var Word2VecUtils = (function() {
       wordList[ai] = wordList[ai].toLowerCase();
       inputVecs.push(wordVecs[wordList[ai]]);
     }
+
+
+    console.log('input words = '+ wordList);
     var sumVectors = Word2VecUtils.addVecList(inputVecs);
     var target = Word2VecUtils.mulVec(sumVectors, 1.0 / wordList.length);
     var matches = getNClosestMatches(n, target);
@@ -68,6 +71,7 @@ var Word2VecUtils = (function() {
         filteredMatches.push(matches[ai]);
       }
     }
+    console.log(filteredMatches);
     return filteredMatches;
   }
 
